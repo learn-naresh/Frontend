@@ -4,7 +4,6 @@ import Facilities from './components/Facilities';
 import FacilityDetails from './components/FacilityDetails';
 import BookingForm from './components/BookingForm';
 import BookingConfirmation from './components/BookingConfirmation';
-
 import Register from './components/Register';
 import Login from './components/Login';
 import Navbar from './components/Navbar';

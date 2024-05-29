@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const BookingForm = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { id } = useParams();
   const [date, setDate] = useState('');
   const [selectedSlot, setSelectedSlot] = useState('');
@@ -56,8 +56,9 @@ const BookingForm = () => {
         throw new Error('Failed to book slot');
       }
 
+      const bookingData = await response.json();
       setIsBookingLoading(false);
-      navigate(`/booking/${id}/confirmation`);
+      navigate(`/confirm-booking/${id}`, { state: bookingData });
 
     } catch (error) {
       console.error('Error booking slot:', error);

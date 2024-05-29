@@ -1,7 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const BookingConfirmation = ({ bookingDetails }) => {
+const BookingConfirmation = () => {
+  const location = useLocation();
+  const bookingDetails = location.state;
+
+  if (!bookingDetails) {
+    return (
+      <div>
+        <p>No booking details available.</p>
+        <Link to="/">Back to Home</Link>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h1>Booking Confirmation</h1>
