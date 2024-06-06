@@ -18,11 +18,18 @@ const BookingConfirmation = () => {
     <div>
       <h1>Booking Confirmation</h1>
       <p>Your booking details:</p>
-      <ul>
-        <li><strong>Facility ID:</strong> {bookingDetails.facility_id}</li>
-        <li><strong>Date:</strong> {bookingDetails.date}</li>
-        <li><strong>Hour Slot:</strong> {bookingDetails.slot}</li>
-      </ul>
+      <table>
+        <tr>
+          <th><strong>Facility ID:</strong></th> 
+          <th><strong>Date:</strong> </th> 
+          <th><strong>Hour Slot:</strong></th>
+        </tr>
+        <tr>
+          <td>{bookingDetails.facility_id}</td>
+          <td>{bookingDetails.date}</td>
+          <td>{bookingDetails.slot}</td>
+        </tr>
+        </table>
       <p>Thank you for booking!</p>
       <Link to="/">Back to Home</Link>
     </div>
