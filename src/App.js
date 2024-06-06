@@ -7,9 +7,12 @@ import BookingConfirmation from './components/BookingConfirmation';
 import Register from './components/Register';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
 
 function App() {
   return (
+    <Provider store={appStore} >
     <Router>
       <Navbar />
       <Routes>
@@ -21,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
+    </Provider>
   );
 }
 
