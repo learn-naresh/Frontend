@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 relative z-10">
       <div className="px-4 flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="sport.png" className="w-8 h-8 rounded-full" alt="Logo" />
@@ -40,7 +40,7 @@ const Navbar = () => {
           {/* Dropdown menu */}
           {dropdownOpen && (
             <div
-              className=" "
+              className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-gray-700 rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none z-20"
               id="user-dropdown"
               role="menu"
               aria-labelledby="user-menu-button"
@@ -55,6 +55,7 @@ const Navbar = () => {
                     to="/dashboard"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                     role="menuitem"
+                    onClick={toggleDropdown}
                   >
                     Dashboard
                   </Link>
@@ -64,6 +65,7 @@ const Navbar = () => {
                     to="/settings"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                     role="menuitem"
+                    onClick={toggleDropdown}
                   >
                     Settings
                   </Link>
@@ -73,13 +75,14 @@ const Navbar = () => {
                     to="/earnings"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                     role="menuitem"
+                    onClick={toggleDropdown}
                   >
                     Earnings
                   </Link>
                 </li>
                 <li>
                   <button
-                    onClick={handleLogout}
+                    onClick={handleLogout || toggleDropdown}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                     role="menuitem"
                   >
