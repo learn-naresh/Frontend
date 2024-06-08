@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { removeUser } from '../utils/userSlice';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const user = useSelector((store) => store.user.userInfo);
+  const dispatch = useDispatch();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    dispatch(removeUser());
     navigate('/login');
   };
 
@@ -46,8 +51,8 @@ const Navbar = () => {
               aria-labelledby="user-menu-button"
             >
               <div className="px-4 py-3">
-                <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-                <span className="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                <span className="block text-sm text-gray-900 dark:text-white">{user?.name}</span>
+                <span className="block text-sm text-gray-500 truncate dark:text-gray-400">{user?.email}</span>
               </div>
               <ul className="py-2" role="none">
                 <li>
@@ -82,7 +87,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <button
-                     onClick={() => {
+                    onClick={() => {
                       handleLogout();
                       toggleDropdown();
                     }}

@@ -12,18 +12,18 @@ import appStore from './utils/appStore';
 
 function App() {
   return (
-    <Provider store={appStore} >
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Facilities />} />
-        <Route path="/facility/:id" element={<FacilityDetails />} />
-        <Route path="/booking/:id" element={<BookingForm />} />
-        <Route path="/confirm-booking/:id" element={<BookingConfirmation />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+    <Provider store={appStore}>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Facilities />} />
+          <Route path="/facility/:id" element={<FacilityDetails />} />
+          <Route path="/booking/:id" element={<BookingForm />} />
+          <Route path="/confirm-booking/:id" element={<BookingConfirmation />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
     </Provider>
   );
 }
