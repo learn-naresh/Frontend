@@ -81,7 +81,7 @@ const Footer = () => {
       <div className="border-t text-center border-[#6b5f5f] pt-8 mt-8">
         <p className="text-gray-300 text-[15px]">
           Copyright © 2023
-          <Link to="https://readymadeui.com/" target="_blank" className="hover:underline mx-1">ReadymadeUI</Link>
+          <Link to="/" target="_blank" className="hover:underline mx-1">@</Link>
           All Rights Reserved.
         </p>
       </div>

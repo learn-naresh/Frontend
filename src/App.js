@@ -15,6 +15,8 @@ import { persistStore } from "redux-persist";
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Service from './components/Service';
+import Pricing from './components/Pricing';
 
 let persistor = persistStore(appStore);
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Service />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Routes>
         <Footer />
       </Router>
