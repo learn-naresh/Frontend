@@ -10,9 +10,15 @@ import Navbar from './components/Navbar';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
 
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+
+let persistor = persistStore(appStore);
+
 function App() {
   return (
     <Provider store={appStore}>
+      <PersistGate persistor={persistor}>
       <Router>
         <Navbar />
         <Routes>
@@ -24,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
+      </PersistGate>
     </Provider>
   );
 }
