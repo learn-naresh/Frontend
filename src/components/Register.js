@@ -131,7 +131,7 @@ const Register = () => {
               Create an account
             </button>
           </div>
-            <p class="text-sm mt-6 text-center">Already have an account? <Link to="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1">Login here</Link></p>
+            <p class="text-sm mt-6 text-center">Already have an account? <Link to="/" class="text-blue-600 font-semibold hover:underline ml-1">Login here</Link></p>
         </form>
     </div>
   </div>

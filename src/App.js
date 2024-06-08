@@ -12,6 +12,9 @@ import appStore from './utils/appStore';
 
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
+import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 let persistor = persistStore(appStore);
 
@@ -28,7 +31,10 @@ function App() {
           <Route path="/confirm-booking/:id" element={<BookingConfirmation />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </Router>
       </PersistGate>
     </Provider>
