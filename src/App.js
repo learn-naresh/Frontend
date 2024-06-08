@@ -1,45 +1,47 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Facilities from './components/Facilities';
 import FacilityDetails from './components/FacilityDetails';
 import BookingForm from './components/BookingForm';
 import BookingConfirmation from './components/BookingConfirmation';
 import Register from './components/Register';
 import Login from './components/Login';
-import Navbar from './components/Navbar';
-import { Provider } from 'react-redux';
-import appStore from './utils/appStore';
-
-import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
 import About from './components/About';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 import Service from './components/Service';
 import Pricing from './components/Pricing';
+import Root from './components/Root';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
 
 let persistor = persistStore(appStore);
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      { path: "", element: <Facilities /> },
+      { path: "facility/:id", element: <FacilityDetails /> },
+      { path: "booking/:id", element: <BookingForm /> },
+      { path: "confirm-booking/:id", element: <BookingConfirmation /> },
+      { path: "register", element: <Register /> },
+      { path: "login", element: <Login /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
+      { path: "services", element: <Service /> },
+      { path: "pricing", element: <Pricing /> },
+    ],
+  },
+]);
 
 function App() {
   return (
     <Provider store={appStore}>
       <PersistGate persistor={persistor}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Facilities />} />
-          <Route path="/facility/:id" element={<FacilityDetails />} />
-          <Route path="/booking/:id" element={<BookingForm />} />
-          <Route path="/confirm-booking/:id" element={<BookingConfirmation />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Service />} />
-          <Route path="/pricing" element={<Pricing />} />
-        </Routes>
-        <Footer />
-      </Router>
+        <RouterProvider router={router} />
       </PersistGate>
     </Provider>
   );
