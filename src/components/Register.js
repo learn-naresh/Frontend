@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { addUser } from '../utils/userSlice';
 
 const Register = () => {
@@ -120,8 +120,8 @@ const Register = () => {
 
             <div class="flex items-center">
               <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
-              <label for="remember-me" class="ml-3 block text-sm">
-                I accept the <a href="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1">Terms and Conditions</a>
+              <label htmlFor="remember-me" class="ml-3 block text-sm">
+                I accept the <Link to="/" class="text-blue-600 font-semibold hover:underline ml-1">Terms and Conditions</Link>
               </label>
             </div>
           </div>
@@ -131,7 +131,7 @@ const Register = () => {
               Create an account
             </button>
           </div>
-            <p class="text-sm mt-6 text-center">Already have an account? <a href="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1">Login here</a></p>
+            <p class="text-sm mt-6 text-center">Already have an account? <Link to="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1">Login here</Link></p>
         </form>
     </div>
   </div>

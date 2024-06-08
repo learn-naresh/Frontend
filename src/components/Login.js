@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { addUser } from '../utils/userSlice';
 
 const Login = () => {
@@ -48,7 +48,7 @@ const Login = () => {
               Seamless Login for Exclusive Access
             </h2>
             <p className="text-sm mt-6">Immerse yourself in a hassle-free login journey with our intuitively designed login form. Effortlessly access your account.</p>
-            <p className="text-sm mt-10">Don't have an account <a href="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1">Register here</a></p>
+            <p className="text-sm mt-10">Don't have an account <Link to="/" class="text-blue-600 font-semibold hover:underline ml-1">Register here</Link></p>
           </div>
           <form className="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full" onSubmit={handleSubmit}>
             <h3 className="text-3xl font-extrabold mb-8 max-md:text-center">
@@ -64,14 +64,14 @@ const Login = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
-                <label for="remember-me" className="ml-3 block text-sm">
+                <label htmlFor="remember-me" className="ml-3 block text-sm">
                   Remember me
                 </label>
               </div>
               <div className="text-sm">
-                <a href="jajvascript:void(0);" className="text-blue-600 hover:text-blue-500">
+                <Link to="/" className="text-blue-600 hover:text-blue-500">
                   Forgot your password?
-                </a>
+                </Link>
               </div>
             </div>
             <div className="!mt-10">
