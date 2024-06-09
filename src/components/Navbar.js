@@ -27,7 +27,7 @@ const Navbar = () => {
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Sports Hub</span>
         </Link>
         <div className="relative flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
+          { user && (<button
             type="button"
             className="flex text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button"
@@ -38,11 +38,12 @@ const Navbar = () => {
             <span className="sr-only">Open user menu</span>
             <img
               className="w-8 h-8 rounded-full"
-              src="sport.png"
+              src={user?.image}
               alt="user photo"
             />
           </button>
-          {/* Dropdown menu */}
+        )}
+          
           {dropdownOpen && (
             <div
               className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-gray-700 rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none z-20"
@@ -50,10 +51,12 @@ const Navbar = () => {
               role="menu"
               aria-labelledby="user-menu-button"
             >
-              <div className="px-4 py-3">
-                <span className="block text-sm text-gray-900 dark:text-white">{user?.name}</span>
-                <span className="block text-sm text-gray-500 truncate dark:text-gray-400">{user?.email}</span>
-              </div>
+              <Link to={`/profile/${user?.uid}`}>
+                <div className="px-4 py-3">
+                  <span className="block text-sm text-gray-900 dark:text-white">{user?.name}</span>
+                  <span className="block text-sm text-gray-500 truncate dark:text-gray-400">{user?.email}</span>
+                </div>
+              </Link>
               <ul className="py-2" role="none">
                 <li>
                   <Link

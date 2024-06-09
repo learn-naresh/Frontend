@@ -15,6 +15,7 @@ import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
+import Profile from './components/Profile';
 
 let persistor = persistStore(appStore);
 
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "contact", element: <Contact /> },
       { path: "services", element: <Service /> },
       { path: "pricing", element: <Pricing /> },
+      { path: "/profile/:id", element: <Profile /> },
     ],
   },
 ]);

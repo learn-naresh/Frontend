@@ -28,6 +28,7 @@ const Login = () => {
             uid: data?.userDetails?.uid,
             name: data?.userDetails?.name,
             email: data?.userDetails?.email,
+            image: "sport.png",
             loggedIn: true,
           })
         );
@@ -48,17 +49,17 @@ const Login = () => {
               Seamless Login for Exclusive Access
             </h2>
             <p className="text-sm mt-6">Immerse yourself in a hassle-free login journey with our intuitively designed login form. Effortlessly access your account.</p>
-            <p className="text-sm mt-10">Don't have an account <Link to="/" class="text-blue-600 font-semibold hover:underline ml-1">Register here</Link></p>
+            <p className="text-sm mt-10">Don't have an account <Link to="/" className="text-blue-600 font-semibold hover:underline ml-1">Register here</Link></p>
           </div>
           <form className="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full" onSubmit={handleSubmit}>
             <h3 className="text-3xl font-extrabold mb-8 max-md:text-center">
               Sign in
             </h3>
             <div>
-              <input name="email" type="email" autocomplete="email" className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-600" placeholder="Email address" value={email} onChange={e => setEmail(e.target.value)} required />
+              <input name="email" type="email" autoComplete="email" className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-600" placeholder="Email address" value={email} onChange={e => setEmail(e.target.value)} required />
             </div>
             <div>
-              <input name="password" type="password" autocomplete="current-password"  className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-600" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
+              <input name="password" type="password" autoComplete="current-password"  className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-600" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
             </div>
 
             <div className="flex items-center justify-between">

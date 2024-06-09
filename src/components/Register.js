@@ -36,6 +36,7 @@ const Register = () => {
             uid: data?.userDetails?.uid,
             name: data?.userDetails?.name,
             email: data?.userDetails?.email,
+            image: "sport.png",
             loggedIn: true,
           })
         );
