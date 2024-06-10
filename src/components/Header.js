@@ -39,7 +39,7 @@ const Header = () => {
             <img
               className="w-8 h-8 rounded-full"
               src={user?.image}
-              alt="user photo"
+              alt="user"
             />
           </button>
         )}
@@ -51,7 +51,10 @@ const Header = () => {
               role="menu"
               aria-labelledby="user-menu-button"
             >
-              <Link to={`/profile/${user?.uid}`}>
+              <Link
+                to={`/profile/${user?.uid}`}
+                onClick={toggleDropdown}
+              >
                 <div className="px-4 py-3">
                   <span className="block text-sm text-gray-900 dark:text-white">{user?.name}</span>
                   <span className="block text-sm text-gray-500 truncate dark:text-gray-400">{user?.email}</span>
