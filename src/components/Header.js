@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { removeUser } from '../utils/userSlice';
 
-const Navbar = () => {
+const Header = () => {
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const user = useSelector((store) => store.user.userInfo);
@@ -175,4 +175,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
