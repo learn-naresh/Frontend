@@ -77,16 +77,18 @@ const UserProfile = () => {
             <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-white">
               User Profile
             </h1>
-            <h2 className="text-grey text-sm mb-4 dark:text-gray-400"></h2>
+
             <form onSubmit={handleSubmit}>
               <input type="file" onChange={handleChange} />
               <img 
-              src={profile?.image}
+                src={profile?.image}
+                alt='profile'
               />
 
               <input type="file" onChange={handleCover_photoChange} />
               <img 
-              src={profile?.cover_photo}
+                src={profile?.cover_photo}
+                alt='cover'
               />
 
               <div className="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
